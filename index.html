@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black">
+    <form id="mainForm" class="bg-black h-[100vh] flex flex-col gap-3 items-center justify-center">
+        <div class="flex gap-2 items-center justify-center">
+            <h1 class="text-white text-xl font-bold">Enter your Serum creatinine:</h1>
+            <input name="scr" id="scr" required class="bg-neutral-950 rounded-md text-white">
+        </div>
+        <div class="flex gap-2 items-center justify-center">
+            <h1 class="text-white text-xl font-bold">Enter your Age:</h1>
+            <input name="age" id="age" required class="bg-neutral-950 rounded-md text-white" type="number">
+        </div>
+        <div class="flex gap-2 items-center justify-center">
+            <h1 class="text-white text-xl font-bold">Select your gender: </h1>
+            <select id="gender" class="bg-neutral-950 p-3 rounded-md text-white mt-5">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </div>
+        <button type="submit" class=" bg-neutral-950 p-3 w-96 text-white rounded-md hover:bg-neutral-700">Submit</button>
+        <div id="result" class="hidden flex gap-2 items-center justify-center text-white">
+            <h1 class="text-white text-3xl">Your eGFR is: </h1>
+            <h1 id="egfrvalue" class="text-3xl font-bold ">120 </h1>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
