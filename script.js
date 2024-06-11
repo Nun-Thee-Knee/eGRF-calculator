@@ -1,15 +1,17 @@
-const eGFRCalculate = (g,S,age) => {
-    K = (g=="male"?0.9:0.7)
-    alpha = (g=="male"?-0.302:-0.241)
-    if((S/K)>1){
+const eGFRCalculate = (gender,serumCreatinine,age) => {
+    K = (gender=="male"?0.9:0.7)
+    alpha = (gender=="male"?-0.302:-0.241)
+    if((serumCreatinine/K)>1){
         min = 1
-        max = S/K
+        max = serumCreatinine/K
     }else{
-        min = S/K
+        min = serumCreatinine/K
         max = 1
     }
-    constant = (g=="male"?1:1.012)
+    constant = (gender=="male"?1:1.012)
+
     eGFR = 142 * Math.pow(min, alpha) * Math.pow(max, -1.200) * Math.pow(0.9938,age) * constant
+    
     return Math.round(eGFR)
 }
 
